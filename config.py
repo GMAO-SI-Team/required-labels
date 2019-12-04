@@ -7,7 +7,7 @@ from exceptions import NoGitHubTokenException
 
 
 APP_BASEDIR = Path(os.path.abspath(__file__)).parent
-APP_NAME = "dimagi/required-labels"
+APP_NAME = "mathomp4/required-labels"
 
 CONFIG_FILENAME = "custom.conf"
 
@@ -23,6 +23,7 @@ def generate_config():
     try:
         config['required_any'] = conf.get('Labels', 'required-labels-any')
         config['required_all'] = conf.get('Labels', 'required-labels-all')
+        config['required_text'] = conf.get('Labels', 'required-labels-text')
         config['banned'] = conf.get('Labels', 'banned-labels')
         config['github_user'] = conf.get('GitHub', 'user')
         config['github_pw'] = conf.get('GitHub', 'password')
@@ -30,6 +31,7 @@ def generate_config():
     except NoSectionError:
         config['required_any'] = os.environ.get('REQUIRED_LABELS_ANY', None)
         config['required_all'] = os.environ.get('REQUIRED_LABELS_ALL', None)
+        config['required_text'] = os.environ.get('REQUIRED_LABELS_TEXT', None)
         config['banned'] = os.environ.get('BANNED_LABELS', None)
         config['github_user'] = os.environ.get('GITHUB_USER', None)
         config['github_pw'] = os.environ.get('GITHUB_PW', None)
