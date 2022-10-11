@@ -1,7 +1,7 @@
 {
     "name": "required-labels",
     "description": "Automated label checking for github pull requests",
-    "repository": "https://github.com/mathomp4/required-labels",
+    "repository": "https://github.com/GMAO-SI-Team/required-labels",
     "keywords": [
         "github",
         "labels",
